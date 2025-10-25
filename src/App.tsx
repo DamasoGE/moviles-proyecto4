@@ -1,11 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
-import { generarDisplayInicial, generarPalabraAleatoria } from "./helpers/Funciones";
+import { generarDisplayInicial, generarPalabraAleatoria, realizarIntento } from "./helpers/Funciones";
 
 export default function App() {
   
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}></Text>
+      <Text style={styles.texto}>
+        {
+          realizarIntento("arbol", "-----", "a").display
+        }
+      </Text>
     </View>
   );
 }

@@ -26,3 +26,25 @@ export function generarDisplayInicial(palabra: any) {
 
   return palabraFormada;
 }
+
+export function realizarIntento(palabra: any, display: any, letra: any) {
+  display = generarDisplayInicial(palabra);
+  let actualizado = false;
+
+  for (let i = 0; i < display.length; i++) {
+    if (display[i] === palabra[i]) {
+      display[i] = letra;
+      actualizado = true;
+    } else {
+      if (palabra[i] === letra) {
+        palabra[i] = letra;
+        actualizado = true;
+      } else {
+        palabra[i] = "-";
+        actualizado = false;
+      }
+    }
+  }
+
+  return { actualizado, display };
+}
