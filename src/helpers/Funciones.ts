@@ -4,17 +4,17 @@ export function getCategorias() {
   return Object.keys(PALABRAS);
 }
 
-export function generarPalabraAleatoria() {
+export function generarPalabraAleatoria(): { categoria: string; palabra: string } {
   let indiceCategoria = Math.floor(Math.random() * getCategorias().length);
-  let categoriaAleatoria = getCategorias()[indiceCategoria];
+  let categoria = getCategorias()[indiceCategoria];
 
-  let palabra = PALABRAS[categoriaAleatoria];
-  let palabraAleatoria = palabra[Math.floor(Math.random() * categoriaAleatoria.length)];
+  let palabrasCategoria = PALABRAS[categoria];
+  let palabra = palabrasCategoria[Math.floor(Math.random() * categoria.length)].toLocaleUpperCase();
   
-  return { categoriaAleatoria, palabraAleatoria };
+  return { categoria, palabra };
 }
 
-export function generarDisplayInicial(palabra: any) {
+export function generarDisplayInicial(palabra: string) {
   let letra;
   let palabraFormada = "";
 
@@ -42,5 +42,5 @@ export function realizarIntento(palabra: string, display: string, letra: string)
 
   const nuevoDisplay = displayArr.join('');
 
-  return { actualizado, display: nuevoDisplay };
+  return { actualizado, displayIntento: nuevoDisplay };
 }

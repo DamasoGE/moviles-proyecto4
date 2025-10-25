@@ -8,23 +8,24 @@ type Props = {
 
 export default function Marcador({ victorias, derrotas }: Props) {
   return (
-    <View style={styles.contenedor}>
-      <Text>
-        Victorias: {victorias} (
-        {derrotas === 0
-          ? 100
-          : Math.floor((victorias * 100) / (victorias + derrotas))}
-        %)
-      </Text>
+<View style={styles.contenedor}>
+  <Text>
+    Victorias: {victorias} (
+    {victorias + derrotas === 0
+      ? '-'
+      : Math.floor((victorias * 100) / (victorias + derrotas))}
+    %)
+  </Text>
 
-      <Text>
-        Derrotas: {derrotas} (
-        {victorias === 0
-          ? 100
-          : Math.floor((derrotas * 100) / (victorias + derrotas))}
-        %)
-      </Text>
-    </View>
+  <Text>
+    Derrotas: {derrotas} (
+    {victorias + derrotas === 0
+      ? '-'
+      : Math.floor((derrotas * 100) / (victorias + derrotas))}
+    %)
+  </Text>
+</View>
+
   );
 }
 
