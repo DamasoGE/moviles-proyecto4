@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
-import { generarPalabraAleatoria, getCategorias, PALABRAS } from "./helpers/Funciones";
+import { generarDisplayInicial, generarPalabraAleatoria } from "./helpers/Funciones";
 
 export default function App() {
   
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>{ generarPalabraAleatoria().categoriaAleatoria }</Text>
+      <Text style={styles.texto}></Text>
     </View>
   );
 }
